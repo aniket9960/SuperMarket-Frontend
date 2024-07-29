@@ -1,0 +1,53 @@
+
+<div class="container mt-5">
+    <div class="card text-center">
+        <div class="card-header justify-content-center">
+            <h2 class="display-4 my-2">Registration Form</h2>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group form-floating mb-3">
+                            <input type="text" id="name" class="form-control" placeholder="" formControlName="name">
+                            <label for="name">Name</label>
+                          </div>
+                          <div class="form-group form-floating mb-3">
+                            <input type="number" id="mobile" class="form-control" placeholder="" formControlName="mobile">
+                            <label for="mobile">Mobile</label>
+                          </div>
+                          <div class="form-group form-floating mb-3">
+                            <input type="email" id="email" class="form-control" placeholder="" formControlName="email">
+                            <label for="email">Email</label>
+                          </div>
+                          <div class="form-group form-floating mb-3">
+                            <input type="password" id="password" class="form-control" placeholder="" formControlName="password">
+                            <label for="password">Password</label>
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-floating mb-3">
+                            <input type="text" id="storeName" class="form-control" placeholder="" formControlName="storeName">
+                            <label for="storeName">Store Name</label>
+                          </div>
+                          <div class="form-group form-floating mb-3">
+                            <input type="text" id="gstNum" class="form-control" placeholder="" formControlName="gstNum">
+                            <label for="gstNum">GST Number</label>
+                          </div>
+                          <div class="form-group form-floating mb-3">
+                            <input type="text" id="address" class="form-control" placeholder="" formControlName="address">
+                            <label for="address">Address</label>
+                          </div>
+                          <div class="form-group form-floating mb-3">
+                            <input type="number" id="pincode" class="form-control" placeholder="" formControlName="pincode">
+                            <label for="pincode">Pincode</label>
+                          </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block mt-3">Register</button>
+                
+              </form>
+        </div>
+    </div>
+  </div>
+  

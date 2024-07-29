@@ -11,5 +11,8 @@ export class AuthService {
   registerUser(body : any){
     return this.http.post("http://localhost:3000/auth/signUp/",body);
   }
+  loginUser(body:any){
+    return this.http.post("http://localhost:3000/auth/signIn/",body)
+  }
 
 }

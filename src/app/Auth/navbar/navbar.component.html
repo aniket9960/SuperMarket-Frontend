@@ -15,7 +15,8 @@
             <a class="nav-link" href="#">Contact Us</a>
           </li>
         </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0"
+            *ngIf="!isLoggedIn">
           <li class="nav-item">
             <a class="nav-link" routerLink="login">Login</a>
           </li>
@@ -23,6 +24,12 @@
             <a class="nav-link" routerLink="register">Register</a>
           </li>
         </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0"
+            *ngIf="isLoggedIn">
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+          </ul>
       </div>
     </div>
   </nav>

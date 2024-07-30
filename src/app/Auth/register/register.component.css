@@ -14,12 +14,12 @@
   border-radius: 8px;
 }
 
-.btn {
+.btn-s {
   border: solid;
   background-color: rgb(252, 242, 242);
 }
 
-.btn:hover {
+.btn-s:hover {
   background-color: #04AA6D;
   color: white;
 }
@@ -27,4 +27,20 @@
 .form-floating .form-control:focus {
   border-color: #4bd4f6;
   box-shadow: 0 0 0 0.2rem rgba(172, 239, 152, 0.821);
+}
+
+.btn-back {
+  border: solid;
+  background-color: rgb(252, 242, 242);
+}
+
+.btn-back:hover {
+  background-color: #f52a2ad6;
+  color: white;
+}
+
+.profile-image-pic{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
 }

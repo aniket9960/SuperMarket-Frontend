@@ -2,13 +2,14 @@
   <div class="row">
     <div class="col-md-12 d-flex justify-content-md-end">
       <span><input class="form-control" type="text" placeholder="Search By Name"></span>
-      <button class="btn btn-info ms-3">Add Customer</button>
+      <button class="btn btn-info ms-3" routerLink="addCustomer" >Add Customer</button>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <h2>Customer List</h2>
-    <div class="table-responsive">
+      <h5 class="text-secondary">Total Customers : {{count}}</h5>
+    <div class="table-responsive rounded ">
       <table class="table table-hover table-bordered border-primary">
         <thead class="thead-dark table-dark">
           <tr>
@@ -39,5 +40,3 @@
     </div>
   </div>    
   </div>
-  
-  

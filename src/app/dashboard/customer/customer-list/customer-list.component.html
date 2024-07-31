@@ -1,0 +1,42 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-md-end">
+      <span><input class="form-control" type="text" placeholder="Search By Name"></span>
+      <button class="btn btn-info ms-3" routerLink="addCustomer" >Add Customer</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Customer List</h2>
+      <h5 class="text-secondary">Total Customers : {{count}}</h5>
+    <div class="table-responsive rounded ">
+      <table class="table table-hover table-bordered border-primary">
+        <thead class="thead-dark table-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Store Name</th>
+            <th scope="col">GST Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Pincode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers; let i = index">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.mobile }}</td>
+            <td>{{ customer.storeName }}</td>
+            <td>{{ customer.gstNum }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.pincode }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>    
+  </div>

@@ -4,15 +4,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse fs-4 fw-bold" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul *ngIf="isLoggedIn" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page"  href="../dashboard">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" aria-current="page" routerLink="customer" href="#">Customer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
+            <a class="nav-link" routerLink="product" href="#">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="order" href="#">Order</a>
           </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0"
@@ -27,7 +30,7 @@
         <ul class="navbar-nav mb-2 mb-lg-0"
             *ngIf="isLoggedIn">
             <li class="nav-item">
-              <a class="nav-link" (click)="logout()">Logout</a>
+              <a class="nav-link" href="#" (click)="logout()">Logout</a>
             </li>
           </ul>
       </div>

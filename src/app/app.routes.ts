@@ -11,6 +11,7 @@ import { ProductComponent } from './dashboard/product/product.component';
 import { CustomerListComponent } from './dashboard/customer/customer-list/customer-list.component';
 import { AddCustomerComponent } from './dashboard/customer/add-customer/add-customer.component';
 import { UpdateCustomerComponent } from './dashboard/customer/update-customer/update-customer.component';
+import { MainDashboardComponent } from './dashboard/main-dashboard/main-dashboard.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,6 +19,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard], 
         children: [
+            { path:'', component : MainDashboardComponent },
             { path: 'customer', component: CustomerComponent, 
                 children: [
                     { path: '', component: CustomerListComponent },

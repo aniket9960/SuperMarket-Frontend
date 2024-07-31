@@ -1,0 +1,19 @@
+.card-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  

@@ -1,0 +1,43 @@
+.btn-s {
+    border: solid;
+    background-color: rgb(252, 242, 242);
+  }
+  
+  .btn-s:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .form-floating .form-control:focus {
+    border-color: #4bd4f6;
+    box-shadow: 0 0 0 0.2rem rgba(172, 239, 152, 0.821);
+  }
+  
+  .btn-back {
+    border: solid;
+    background-color: rgb(252, 242, 242);
+  }
+  
+  .btn-back:hover {
+    background-color: #eb5555;
+    color: white;
+  }
+  
+  .profile-image-pic{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+  }
+
+  .card-title{
+    color: rgba(1, 1, 1, 0.674);
+  font-weight: bolder;
+  text-shadow: 4px 4px 8px rgb(248, 248, 248);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 1.5px;
+  }
+
+  .cardbody-color{
+    background-color: #ebf2fa;
+  }
+  

@@ -14,6 +14,7 @@ import { UpdateCustomerComponent } from './dashboard/customer/update-customer/up
 import { MainDashboardComponent } from './dashboard/main-dashboard/main-dashboard.component';
 import { ProductListComponent } from './dashboard/product/product-list/product-list.component';
 import { AddProductComponent } from './dashboard/product/add-product/add-product.component';
+import { CreateOrderComponent } from './dashboard/order/create-order/create-order.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,7 +30,11 @@ export const routes: Routes = [
                     { path: 'updateCustomer', component: UpdateCustomerComponent }
                 ]
             },
-            { path: 'order', component: OrderComponent },
+            { path: 'order', component: OrderComponent , 
+                children: [
+                    {path: '', component: CreateOrderComponent}
+                ]
+            },
             { path: 'product', component: ProductComponent, 
                 children: [
                     {path: '', component: ProductListComponent},

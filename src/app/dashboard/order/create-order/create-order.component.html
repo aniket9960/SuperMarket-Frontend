@@ -1,0 +1,92 @@
+<div class="billing-container">
+    <h2>Billing Invoice</h2>
+  
+    <form (ngSubmit)="onSubmit()" [formGroup]="orderForm">
+      <!-- Customer Details -->
+      <div class="row">
+        <div class="col">
+          <label for="buyerName">Customer Name:</label>
+          <input id="buyerName" formControlName="buyerName" type="text" class="form-control" />
+        </div>
+        <div class="col">
+          <label for="invoiceDate">Invoice Date:</label>
+          <input id="invoiceDate" formControlName="invoiceDate" type="date" class="form-control" />
+        </div>
+      </div>
+  
+      <!-- Products -->
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th>Discount</th>
+              <th>GST</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody formArrayName="products">
+            <tr *ngFor="let product of products.controls; let i = index" [formGroupName]="i">
+                <td>
+                    <input type="text" class="form-control" [formControl]="getProductNameControl(i)" (input)="onProductNameChange(i)" />
+                    <ul *ngIf="filteredProducts[i] && filteredProducts[i].length > 0" class="suggestions">
+                      <li *ngFor="let product of filteredProducts[i]" (click)="onProductSelected(product, i)">
+                        {{ product.name }}
+                      </li>
+                    </ul>
+                  </td>                  
+              <td><input formControlName="quantity" type="number" class="form-control" (input)="calculateTotal(i)" /></td>
+              <td><input formControlName="price" type="number" class="form-control" (input)="calculateTotal(i)" /></td>
+              <td><input formControlName="discount" type="number" class="form-control" (input)="calculateTotal(i)" /></td>
+              <td><input formControlName="gstRate" type="number" class="form-control" (input)="calculateTotal(i)" /></td>
+              <td><input formControlName="total" type="text" class="form-control" readonly /></td>
+              <td>
+                <button type="button" (click)="removeProduct(i)" class="btn btn-danger">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Add Item Button -->
+      <div class="form-group">
+        <button type="button" class="btn btn-secondary" (click)="addProduct()">Add Item</button>
+      </div>
+  
+      <!-- Totals -->
+      <div class="row">
+        <div class="col">
+          <label for="total">Total Amount:</label>
+          <input id="total" formControlName="total" type="text" class="form-control" readonly />
+        </div>
+        <div class="col">
+          <label for="discountPercent">Discount Percentage:</label>
+          <input id="discountPercent" formControlName="discountPercent" type="number" class="form-control" (input)="calculateDiscount()" />
+        </div>
+        <div class="col">
+          <label for="discountAmount">Total Discount:</label>
+          <input id="discountAmount" formControlName="discountAmount" type="text" class="form-control" readonly />
+        </div>
+        <div class="col">
+          <label for="totalGst">Total GST:</label>
+          <input id="totalGst" formControlName="totalGst" type="text" class="form-control" readonly />
+        </div>
+        <div class="col">
+          <label for="grandTotal">Grand Total:</label>
+          <input id="grandTotal" formControlName="grandTotal" type="text" class="form-control" readonly />
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary mx-3">Submit Order</button>
+        <button type="button" (click)="cancel()" class="btn btn-secondary">Cancel</button>
+      </div>
+    </form>
+  </div>
+  
+
+  
